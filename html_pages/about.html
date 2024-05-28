@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="../css_page/styles.css">
+</head>
+<body>
+  <header>
+    <h1>About Us</h1>
+    </header>
+
+  <main>
+    <h2>Meet the Team</h2>
+    <ul id="member"></ul>
+  </main>
+
+  <footer>
+    </footer>
+    <script>
+      const members = [
+        "Falak Ibrahim Al-jammaz",
+        "Remas Ibrahim Al-Muaiqly",
+        
+      ];
+
+      const memberList = document.getElementById("member");
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      function displayMembers() {
+        const shuffledMembers = shuffleArray(members);
+        memberList.innerHTML = "";
+
+        shuffledMembers.forEach((member) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = member;
+          memberList.appendChild(listItem);
+        });
+      }
+
+      displayMembers();
+
+      window.onload = function () {
+        displayMembers();
+      };
+    </script>
+</body>
+</html>
+
+<style>
+  /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  margin-bottom: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+/* Header Styles */
+header {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Main Styles */
+main {
+  padding: 20px;
+}
+
+.meet-the-team { /* Create a class for styling the team section */
+  display: flex; /* Arrange team members horizontally */
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+  justify-content: space-around; /* Distribute team members evenly */
+}
+
+.team-member { /* Create a class for styling individual team members */
+  width: 30%; /* Define the width of each team member section */
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+#member{
+  list-styly:nonr;
+
+
+
+}
+
+
+</style>

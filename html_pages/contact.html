@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact Us</title>
+   <link rel="stylesheet" href="../css_page/styles.css">
+</head>
+<body>
+   <header>
+     <h1>Contact Us</h1>
+   </header>
+
+   <main>
+     <h2>Get in Touch</h2>
+     <form action="submit_form.php" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+       <label for="name">Name:</label>
+       <input type="text" id="name" name="name" required placeholder="Ibrahim" style="width: 100%; padding: 10px; border: 1px solid #ccc;">
+    
+       <label for="email">Email:</label>
+       <input type="email" id="email" name="email" required placeholder="email@any.com" style="width: 100%; padding: 10px; border: 1px solid #ccc;">
+       
+       <textarea id="message" name="message" rows="5" required placeholder="Enter your message"></textarea>
+
+       <button type="submit" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; cursor: pointer;">Send Message</button>
+     </form>
+
+     <div id="message-container" style="display: none; margin-top: 20px;">
+       <p id="success-message" style="color: green;">Message sent successfully!</p>
+     </div>
+   </main>
+
+   <footer>
+   </footer>
+
+   <script>
+     // This script handles showing the message after form submission
+     const form = document.querySelector('form');
+     const messageContainer = document.getElementById('message-container');
+
+     form.addEventListener('submit', function(event) {
+       // Prevent the default form submission behavior
+       event.preventDefault();
+       
+       // Show the message container
+       messageContainer.style.display = 'block';
+       
+       // Optional: You can hide the form after submission if needed
+       form.style.display = 'none';
+     });
+   </script>
+</body>
+</html>
